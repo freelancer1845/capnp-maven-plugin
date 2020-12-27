@@ -171,6 +171,13 @@ public class CapnProtoMojo
     @Parameter( defaultValue = "true", required = true )
     private boolean handleNativeDependency;
 
+    /**
+     * Tries to resolve the package name given by '$Java.package("...");' in
+     * the schema file and creates the source file in the corresponding directory
+     */
+    @Parameter( defaultValue = "false", required = true )
+    private boolean resolvePackageName;
+    
     private final NativesManager nativesManager = new NativesManager();
 
     @Override
